@@ -757,7 +757,7 @@ function renderQuestion() {
   state.selected = [];
   state.answered = false;
 
-  Object.entries(q.options).forEach(([key, val]) => {
+  Object.entries(q.options).sort(([a],[b]) => a < b ? -1 : 1).forEach(([key, val]) => {
     const btn = document.createElement('button');
     btn.className = 'option-btn';
     btn.dataset.key = key;
